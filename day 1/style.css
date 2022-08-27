@@ -1,0 +1,18 @@
+.objects {
+    border: 30px outset gold;
+    background-color: lightblue;
+    text-align: justify;
+    padding: 20px;
+}
+.html {
+    border: 30px outset grey;
+    background-color: lightblue;
+    text-align: justify;
+    padding: 20px;
+}
+table,thead,tbody,tr,td,th{
+    border: 3px solid black;;
+}
+thead {
+    text-align: center;
+}

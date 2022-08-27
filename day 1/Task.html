@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Difference between HTTP 1.1 and HTTP 2</title>
+    <link rel="stylesheet" href="./style.css"></link>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="html"><h3 style="text-align: center;">Difference between HTTP 1.1 and HTTP 2</h3>
+    <p>HTTP stands for hypertext transfer protocol & it is used in client-server communication. 
+        By using HTTP user sends the request to the server & the server sends the response to the user. 
+        There are several stages of development of HTTP but we will focus mainly on HTTP/1.1 which was created in 1997 & 
+        the new one is HTTP/2 which was created in 2015.</p>
+    <p><b>HTTP/1.1: </b>Assume the situation when you make a request to the server for the gokul.html page & server responds to us as a resource 
+        gokul.html page. 
+        before sending the request and the response there is a TCP (Transfer/Transmission Control Protocol) connection established between client & server. 
+        again us make a request to the server for image img.jpg & the server gives a response as an image img.jpg. 
+        the connection was not lost here after the first request because we add a keep-alive header which is the part of the request so 
+        there is an open connection between the server & client. There is a persistent connection which means several requests & responses 
+        are merged in a single connection. These are the drawbacks that lead to the creation of HTTP/2: The first problem is HTTP/1.1 transfer 
+        all the requests & responses in the plain text message form. The second one is head of line blocking in which TCP connection is blocked 
+        all other requests until the response does not receive. 
+        all the information related to the header file is repeated in every request.</p>
+        <p><b>HTTP/2:</b> HTTP/2 was developed over the SPDY protocol. 
+            HTTP/2 works on the binary framing layer instead of textual that converts all the messages in binary format.
+            It works on fully multiplexed that is one TCP connection is used for multiple requests. 
+            HTTP/2 uses HPACK which is used to split data from header. it compresses the header. 
+            The server sends all the other files like CSS & JS without the request of the client using the PUSH frame.</p>
+            <table>
+                <thead>
+                    <trS>
+                        <th>HTTP/1.1</th>
+                        <th>HTTP/2</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ithe usest works on the textual format.</td>
+                        <td>It works on the binary protocol.</td>
+                    </tr>
+                    <tr>
+                        <td>There is head of line blocking that blocks all the requests behind it until it doesn’t get its all resources.</td>
+                        <td>It allows multiplexing so one TCP connection is required for multiple requests.</td>
+                    </tr>
+                    <tr>
+                        <td>It uses requests resource Inlining for use getting multiple pages</td>
+                        <td>It uses PUSH frame by server that collects all multiple pages </td>
+                    </tr>
+                    <tr>
+                        <td>It compresses data by itself.</td>
+                        <td>It uses HPACK for data compression.</td>
+                    </tr>
+                </tbody>
+            </table>
+                
+               
+
+
+    </div>
+</body>
+</html>
